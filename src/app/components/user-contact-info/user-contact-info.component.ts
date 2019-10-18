@@ -3,11 +3,11 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-user-basic-info',
-  templateUrl: './user-basic-info.component.html',
-  styleUrls: ['./user-basic-info.component.css']
+  selector: 'app-user-contact-info',
+  templateUrl: './user-contact-info.component.html',
+  styleUrls: ['./user-contact-info.component.css']
 })
-export class UserBasicInfoComponent implements OnInit {
+export class UserContactInfoComponent implements OnInit {
 
   maritalStatus = {
     single: false,
@@ -160,8 +160,9 @@ this.genderFinal="Other";
     console.log("Contact Number: " + this.form.controls.contactNumber.value);
     console.log("Mobile Checked: " + this.mobileChecked);
 
-    this.router.navigate(['/contactInfo']);
+    this.router.navigate(['/additionalInfo']);
     
   }
 
 }
+

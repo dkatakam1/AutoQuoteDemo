@@ -1,3 +1,8 @@
 .container{
     margin-top:20%; 
 }
+
+.header{
+    border:1px solid red;
+    margin-left:-22px;
+}

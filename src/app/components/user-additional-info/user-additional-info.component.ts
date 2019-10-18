@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
-import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-user-basic-info',
-  templateUrl: './user-basic-info.component.html',
-  styleUrls: ['./user-basic-info.component.css']
+  selector: 'app-user-additional-info',
+  templateUrl: './user-additional-info.component.html',
+  styleUrls: ['./user-additional-info.component.css']
 })
-export class UserBasicInfoComponent implements OnInit {
+export class UserAdditionalInfoComponent implements OnInit {
 
   maritalStatus = {
     single: false,
@@ -37,7 +36,7 @@ export class UserBasicInfoComponent implements OnInit {
     nonBinary = new FormControl();
     
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder) { }
 
 
   form: FormGroup;
@@ -140,28 +139,6 @@ this.genderFinal="Other";
     this.isDateFocused = true;
     else
     this.isDateFocused = false;
-  }
-
-  prevPage(){}
-
-  nextPage(){
-    
-    console.log("Data collected in this form : ");
-    console.log("Prefix : " + this.form.controls.prefix.value);
-    console.log("FirstName : " + this.form.controls.firstName.value);
-    console.log("LastName : " +this.form.controls.lastName.value );
-    console.log("Suffix : " + this.form.controls.suffix.value);
-    console.log("Email : " + this.form.controls.email.value);
-    console.log("BirthDate : " + this.form.controls.birthDay.value);
-    console.log("BirthMonth : " +this.form.controls.birthMonth.value );
-    console.log("BirthYear : " + this.form.controls.birthYear.value);
-    console.log("Gender : " +this.maritalStatusFinal );
-    console.log("Marital Status : " + this.genderFinal);
-    console.log("Contact Number: " + this.form.controls.contactNumber.value);
-    console.log("Mobile Checked: " + this.mobileChecked);
-
-    this.router.navigate(['/contactInfo']);
-    
   }
 
 }
