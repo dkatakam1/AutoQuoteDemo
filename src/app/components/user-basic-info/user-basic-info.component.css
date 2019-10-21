@@ -56,6 +56,14 @@ label{
     
 }
 
+.address-button-clicked{
+    background-color: green;  
+}
+
+.address-text-highlight{
+    color:white;
+}
+
 .checkbox-text{
     font-family: 'Roboto Condensed', sans-serif;
     font-size:15px;
