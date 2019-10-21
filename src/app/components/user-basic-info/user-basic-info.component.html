@@ -188,12 +188,14 @@
                                     <div class="form-group col-12 col-lg-6 col-md-12 col-sm-12 col-xl-6"
                                         [ngClass]="getFieldDisplayClass('contact')">
                                         <label for="contact">Preferred Contact Number</label>
-                                        <input type="text" appAutoFocus class="form-control" formControlName='contactNumber' id="contactNumber"
+                                        <input 
+                                         type="text" appAutoFocus class="form-control" formControlName='contactNumber' id="contactNumber"
                                         (change)="storeValueToLocalStorage($event)" >
                                     <br>
                                        <div>
-                                        <i (click)=mobileNumberCheck() class="fa checkbox-color fa-lg" 
-                                         [ngClass]="{'fa-square-o' : mobileUnChecked,
+                                        <i placement="top" triggers="hover" ngbTooltip="Enable mobile number"
+                                          (click)=mobileNumberCheck() class="fa checkbox-color fa-lg" 
+                                          [ngClass]="{'fa-square-o' : mobileUnChecked,
                                                      'fa-check-square-o' : mobileChecked}" aria-hidden="true"></i>
                                         <span class="checkbox-text">This is a mobile number</span>
                                         </div>
@@ -210,8 +212,16 @@
         
 
     <div class="card-footer">
-        <button class="address-button" (click)="nextPage()"> 
-            <span class="address-text">Address</span> &nbsp;
+        <button ngbPopover="Back to home page" triggers="mouseenter:mouseleave" popoverTitle="Info"
+                 class="address-button" (click)="prevPage()" [ngClass]="{'address-button-clicked' : goBack}">   
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="black" stroke-width="10" fill-rule="evenodd" clip-rule="evenodd">
+                        <path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/>
+                    </svg>&nbsp;&nbsp;
+                        <span class="address-text" [ngClass]="{'address-text-highlight' : goBack}">Back</span>
+        </button>&nbsp;
+        <button ngbPopover="Checkout contact details" triggers="mouseenter:mouseleave" popoverTitle="Info"
+        class="address-button" (click)="nextPage()" [ngClass]="{'address-button-clicked' : goNext}"> 
+            <span class="address-text" [ngClass]="{'address-text-highlight' : goNext}">Address</span> &nbsp;
             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="black" stroke-width="10" fill-rule="evenodd" clip-rule="evenodd">
                 <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
             </svg>

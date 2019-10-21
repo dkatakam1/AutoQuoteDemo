@@ -26,6 +26,8 @@ export class UserBasicInfoComponent implements OnInit {
   maritalStatusFinal = '';
   genderFinal = '';
   isDateFocused = false;
+  goNext = false;
+  goBack = false;
 
 
    
@@ -142,7 +144,9 @@ this.genderFinal="Other";
     this.isDateFocused = false;
   }
 
-  prevPage(){}
+  prevPage(){
+    this.goBack = true;
+  }
 
   nextPage(){
     
@@ -159,7 +163,7 @@ this.genderFinal="Other";
     console.log("Marital Status : " + this.genderFinal);
     console.log("Contact Number: " + this.form.controls.contactNumber.value);
     console.log("Mobile Checked: " + this.mobileChecked);
-
+    this.goNext = true;
     this.router.navigate(['/contactInfo']);
     
   }

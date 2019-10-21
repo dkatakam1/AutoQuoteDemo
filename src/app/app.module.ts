@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UserBasicInfoComponent } from './components/user-basic-info/user-basic-info.component';
@@ -26,7 +27,8 @@ import { UserContactInfoComponent } from './components/user-contact-info/user-co
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
