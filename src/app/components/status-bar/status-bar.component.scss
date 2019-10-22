@@ -37,6 +37,20 @@ ul{
   
   }
   
+/*
+  li:before{
+    display: block;
+    width: 36px;
+    height: 36px;
+    content: url('inactive.svg');
+    counter-increment: step;
+    background-color: #F2F8FC;
+    margin:10px auto;
+    position: relative;
+    z-index:1;
+  }
+*/
+  
   li:after{
     content:"";
     width:100%;
@@ -45,7 +59,7 @@ ul{
     position:absolute;
     top: 30px;
     left: -50%;
-    z-index: 1;
+    z-index: 0;
   }
   
   li:first-child:after {
@@ -60,10 +74,21 @@ ul{
       color:#003893;
   }
 
-  li.current:before {
-    background-color:  #003893;
+  li.current:before{
+    background-color: #003893;
   }
-  
+/*
+  li.current:before {
+    display: block;
+    width: 36px;
+    height: 36px;
+    content: url('active.svg');
+    counter-increment: step;
+    margin:10px auto;
+    position: relative;
+    z-index:1;
+  }
+  */
   li.finished + li:after {
     background-color:  #003893;
   }
@@ -73,8 +98,19 @@ ul{
     content:url('check.svg');
     color: #FFF;
   }
-
- 
+/*
+li.finished:before {
+    display: block;
+    width: 36px;
+    height: 36px;
+    content: url('check-mark.svg');
+    counter-increment: step;
+    background-color:#F2F8FC;
+    margin:10px auto;
+    position: relative;
+    z-index:1;
+}
+ */
 
   li.finished{
       color:#003893;

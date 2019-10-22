@@ -29,6 +29,11 @@ export class UserBasicInfoComponent implements OnInit {
   goNext = false;
   goBack = false;
 
+  prefixSelected = '';
+  suffixSelected = '';
+  isprefixDDExpanded = false;
+  issuffixDDExpanded = false;
+
 
    
     single = new FormControl();
@@ -122,6 +127,27 @@ this.genderFinal="Other";
 
   getFieldDisplayClass(fName: string){
 
+  }
+
+  togglePrefixSuffix(value : number){
+    if(value == 1){
+      if(this.isprefixDDExpanded){ this.isprefixDDExpanded = false;}
+      else { this.isprefixDDExpanded = true;}
+    } else {
+      if(this.issuffixDDExpanded){ this.issuffixDDExpanded = false;}
+      else { this.issuffixDDExpanded = true;}
+    }
+
+  }
+
+  selectPrefix(prefix: string){
+    this.prefixSelected = prefix;
+    this.togglePrefixSuffix(1);
+  }
+
+  selectSuffix(suffix: string){
+    this.suffixSelected = suffix;
+    this.togglePrefixSuffix(2);
   }
 
   mobileNumberCheck(){

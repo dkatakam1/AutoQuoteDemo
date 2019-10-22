@@ -17,13 +17,11 @@
                     <div class="form-row col-12 mb-2 mt-2">
                         <div class="form-group col-12 col-lg-2 col-md-12 col-sm-12 col-xl-2">
                             <label for="prefix">Prefix</label>
-                            <select class="form-control select-no-padding" formControlName='prefix' id="prefix"
-                                (change)="storeValueToLocalStorage($event)" (ngModelChange)="onChangePrefix($event)">
-                                <option value="Dr.">Dr.</option>
-                                <option value="Mr.">Mr.</option>
-                                <option value="Ms.">Ms.</option>
-                                <option value="Mrs.">Mrs.</option>
-                            </select>
+                             <button class="form-control align-items-right" 
+                                     (click)=togglePrefixSuffix(1)>
+                                    <span class="prefix-selected-text">{{prefixSelected}}</span>
+                                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                             </button>
                         </div>
                         <div class="form-group col-12 col-lg-4 col-md-12 col-sm-12 col-xl-4"
                             [ngClass]="getFieldDisplayClass('firstName')">
@@ -46,22 +44,68 @@
                         </div>
                         <div class="form-group col-12 col-lg-2 col-md-12 col-sm-12 col-xl-2">
                                 <label for="suffix">Suffix</label>
-                                <select class="form-control select-no-padding"  (change)="storeValueToLocalStorage($event)"
-                                    formControlName='suffix' id="suffix">
-                                    <option value="II">II</option>
-                                    <option value="III">III</option>
-                                    <option value="IV">IV</option>
-                                    <option value="I">I</option>
-                                    <option value="D.O.">D.O.</option>
-                                    <option value="M.D.">M.D.</option>
-                                    <option value="PhD">PhD</option>
-                                    <option value="Jr.">Jr.</option>
-                                    <option value="Sr.">Sr.</option>
-                                </select>
+                                <button class="form-control align-items-right"
+                                        (click)=togglePrefixSuffix(2)>
+                                        <span class="prefix-selected-text">{{suffixSelected}}</span>
+                                    <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+                                 </button>
                         </div>
                     </div>
 
+                    <div class="form-row col-12 mb-2  prefix-dropdown">
+                        <div class="form-group col-12 col-lg-2 col-md-12 col-sm-12 col-xl-2"
+                             [ngClass]="{'prefix-dropdown-expanded' : isprefixDDExpanded}">
+                            <table class="prefix-table">
+                                    <tr class="prefix-row" id="dr" (click)="selectPrefix('Dr.')">
+                                        <td>Dr.</td>
+                                    </tr>
+                                    <tr class="prefix-row" id="mr" (click)="selectPrefix('Mr.')">
+                                        <td>Mr.</td>
+                                    </tr>
+                                    <tr class="prefix-row" id="ms" (click)="selectPrefix('Ms.')">
+                                        <td>Ms.</td>
+                                    </tr>
+                                    <tr class="prefix-row" id="mrs" (click)="selectPrefix('Mrs.')">
+                                        <td>Mrs.</td>
+                                    </tr>
+                            </table>
+                    </div>
 
+                    <div class="form-group col-12 col-lg-2 col-md-12 col-sm-12 col-xl-2 ml-auto"
+                         [ngClass]="{'prefix-dropdown-expanded' : issuffixDDExpanded}">
+                            <table class="suffix-table">
+                                    <tr class="prefix-row"  (click)="selectSuffix('II')">
+                                        <td>II</td>
+                                    </tr>
+                                    <tr class="prefix-row"  (click)="selectSuffix('III')">
+                                        <td>III</td>
+                                    </tr>
+                                    <tr class="prefix-row" (click)="selectSuffix('IV')">
+                                        <td>IV</td>
+                                    </tr>
+                                    <tr class="prefix-row"  (click)="selectSuffix('I')">
+                                        <td>I</td>
+                                    </tr>
+                                    <tr class="prefix-row" (click)="selectSuffix('D.O.')">
+                                            <td>D.O.</td>
+                                    </tr>
+                                    <tr class="prefix-row" (click)="selectSuffix('M.D.')">
+                                            <td>M.D.</td>
+                                    </tr>
+                                    <tr class="prefix-row"  (click)="selectSuffix('PhD.')">
+                                            <td>PhD</td>
+                                    </tr>
+                                    <tr class="prefix-row" (click)="selectSuffix('Jr.')">
+                                            <td>Jr.</td>
+                                    </tr>
+                                    <tr class="prefix-row"  (click)="selectSuffix('Sr.')">
+                                            <td>Sr.</td>
+                                    </tr>
+                            </table>
+                    </div>
+                </div>
+
+                
 
                     <div class="form-row col-12 mb-2">
                         <div class="form-group col-12 col-lg-6 col-md-6 col-sm-12 col-xl-6"
@@ -99,6 +143,7 @@
                             </div>
 
                         </div>
+
 
 
                         <div class="form-row col-12 mb-2">
@@ -202,11 +247,7 @@
                                         
                                     </div>
                             </div>
-
-
-                </div>
-
-
+                        </div>
             </form>
     </div>
         
