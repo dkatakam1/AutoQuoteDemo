@@ -11,7 +11,7 @@
     </div>
 
     <div class="card-body">
-            <div>
+            <form [formGroup]="form">
                 <div class="justify-content-center col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12">
 
 
@@ -26,13 +26,13 @@
 
                     <div class="form-row col-12 mb-2 mt-2">
                         <div class="form-group col-12 col-lg-5 col-md-12 col-sm-12 col-xl-5">
-                            <i (click)="productCheck(1)" class="fa checkbox-color fa-lg" 
+                            <i (click)="storeValueToLocalStorage($event)" class="fa checkbox-color fa-lg" id="memberships"
                                 [ngClass]="{'fa-square-o' : !memberships,
                                             'fa-check-square-o' : memberships}" aria-hidden="true"></i>
                             <span class="checkbox-text">AAA memberships</span>
                         </div>
                         <div class="form-group col-12 col-lg-5 col-md-12 col-sm-12 col-xl-5">
-                            <i (click)="productCheck(2)" class="fa checkbox-color fa-lg" 
+                            <i (click)="storeValueToLocalStorage($event)" class="fa checkbox-color fa-lg"  id="rentersInsurance"
                                 [ngClass]="{'fa-square-o' : !rentersInsurance,
                                             'fa-check-square-o' : rentersInsurance}" aria-hidden="true"></i>
                             <span class="checkbox-text">AAA Renters Insurance</span>
@@ -42,13 +42,13 @@
 
                     <div class="form-row col-12 mb-2 mt-2">
                             <div class="form-group col-12 col-lg-5 col-md-12 col-sm-12 col-xl-5">
-                                    <i (click)="productCheck(3)" class="fa checkbox-color fa-lg" 
+                                    <i (click)="storeValueToLocalStorage($event)" class="fa checkbox-color fa-lg" id="lifeInsurance"
                                     [ngClass]="{'fa-square-o' : !lifeInsurance,
                                                 'fa-check-square-o' : lifeInsurance}" aria-hidden="true"></i>
                                 <span class="checkbox-text">AAA Life Insurance</span>
                             </div>
                             <div class="form-group col-12 col-lg-5 col-md-12 col-sm-12 col-xl-5">
-                                    <i (click)="productCheck(4)" class="fa checkbox-color fa-lg" 
+                                    <i (click)="storeValueToLocalStorage($event)" class="fa checkbox-color fa-lg" id="homeCondoOwners"
                                     [ngClass]="{'fa-square-o' : !homeCondoOwners,
                                                 'fa-check-square-o' : homeCondoOwners}" aria-hidden="true"></i>
                                 <span class="checkbox-text">AAA Homwowners or Condo Owners</span>
@@ -66,9 +66,9 @@
 
                       <div class="form-group col-12 col-lg-2 col-md-2 col-sm-12 col-xl-2">
                             <label class="container">
-                                    <input type="radio" id="yes"
+                                    <input type="radio" id="isYes" formControlName="isACGFirstCompanyContacted"
                                      [checked]="isYes"
-                                     (change)="radioButtonChecked($event)">
+                                     (change)="storeValueToLocalStorage($event)">
                                     <span class="checkmark"></span>
                                     <span class="radio-text">Yes</span>
                             </label>
@@ -76,9 +76,9 @@
 
                         <div class="form-group col-12 col-lg-2 col-md-3 col-sm-12 col-xl-2">
                             <label class="container">
-                                    <input type="radio" id="no" 
+                                    <input type="radio" id="isNo" formControlName="isACGFirstCompanyContacted"
                                     [checked]="isNo"
-                                    (change)="radioButtonChecked($event)">
+                                    (change)="storeValueToLocalStorage($event)">
                                     <span class="checkmark"></span>
                                     <span class="radio-text">No</span>
                             </label>
@@ -98,9 +98,9 @@
                     </div>
                </div>
 
-            </div>
+            </form>
           
-    </div>
+    </div> 
 
   
         

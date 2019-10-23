@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 
 
 @Component({
@@ -19,11 +20,27 @@ export class UserAdditionalInfoComponent implements OnInit {
     goBack = false;
     goNext = false;
    
-  constructor(private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
+
+  form: FormGroup;
 
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      isACGFirstCompanyContacted: ['', Validators.required]
+    });
+    this.initFormData();
   }
 
+  initFormData(){
+    
+    //this.memberships = this.webStorageService.getFromLocalStorage("memberships");
+    //this.rentersInsurance = this.webStorageService.getFromLocalStorage("rentersInsurance");
+    //this.lifeInsurance = this.webStorageService.getFromLocalStorage("lifeInsurance");
+    //this.homeCondoOwners = this.webStorageService.getFromLocalStorage("homeCondoOwners");
+    //this.isYes = this.webStorageService.getFromLocalStorage("isYes");
+    //this.isNo = this.webStorageService.getFromLocalStorage("isNo");
+    
+  }
 
   hasInValidValue(fName: string){
     return false;
@@ -33,42 +50,49 @@ export class UserAdditionalInfoComponent implements OnInit {
 
   }
 
+  
   toggleOption(status: boolean){
     if(status == true) return false;
     else return true;
   }
 
-  radioButtonChecked(event: Event){
-    
-    console.log("Radio button checked");
 
-    const targetId = (event.target as Element).id;
-    if(targetId == 'yes'){
+  storeValueToLocalStorage(event: Event){
+    let targetId = (event.target as Element).id;
+
+    if(targetId == "memberships"){
+      this.memberships = this.toggleOption(this.memberships);
+      //this.webStorageService.saveToLocalStorage(targetId, this.memberships);
+    }
+    
+    if(targetId == "rentersInsurance"){
+      this.rentersInsurance = this.toggleOption(this.rentersInsurance);
+       //this.webStorageService.saveToLocalStorage(targetId, this.rentersInsurance);
+    }
+    
+    if(targetId == "lifeInsurance"){
+      this.lifeInsurance = this.toggleOption(this.lifeInsurance);
+       //this.webStorageService.saveToLocalStorage(targetId, this.lifeInsurance);
+    }
+    
+    if(targetId == "homeCondoOwners"){
+      this.homeCondoOwners = this.toggleOption(this.homeCondoOwners);
+       //this.webStorageService.saveToLocalStorage(targetId, this.homeCondoOwners);
+    }
+
+    if(targetId == 'isYes'){
       this.isNo = false;
       this.isYes = true;
-    } else {
+      this.form.setValue({ isACGFirstCompanyContacted: "Yes"});
+      //this.webStorageService.saveToLocalStorage(targetId, this.isYes);
+    } 
+    
+    if(targetId == 'isNo')
+    {
       this.isNo = true;
       this.isYes = false;
-    }
- 
-  }
-
-  productCheck(option: number){
-
-    if(option == 1){
-      this.memberships = this.toggleOption(this.memberships);
-    }
-    
-    if(option == 2){
-      this.rentersInsurance = this.toggleOption(this.rentersInsurance);
-    }
-    
-    if(option == 3){
-      this.lifeInsurance = this.toggleOption(this.lifeInsurance);
-    }
-    
-    if(option == 4){
-      this.homeCondoOwners = this.toggleOption(this.homeCondoOwners);
+      this.form.setValue({ isACGFirstCompanyContacted: "No"});
+       //this.webStorageService.saveToLocalStorage(targetId, this.isNo);
     }
   
   }
