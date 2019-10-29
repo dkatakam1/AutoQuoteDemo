@@ -1,0 +1,112 @@
+.navbar{
+    background-color: #3774AF !important;
+    width:1024px;
+    height:164px;
+    position: fixed;
+}
+
+.navbar .navbar-brand{
+    color : #FFF;
+}
+
+
+.navbar .navbar-brand .aaa-logo{
+    width:209px;
+    height:114px; 
+    margin-left: -140.5px;  
+    margin-top:28px;
+}
+
+
+.navbar .navbar-header{
+    color : #FFF;
+}
+
+.navbar .navbar-header-text{
+    font-size: 36px;
+    line-height:43px;
+    padding-left:50%;
+    margin-top:30%;
+    font-family:'Mission Gothic Regular', sans-serif;
+    color: #FFF !important;
+
+}
+
+.container-fluid{
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+}
+
+
+
+/* Media Queries for Responsiveness */
+
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (min-width: 320px) and (max-width: 575px) {
+
+    .navbar{
+        width:100%;
+        height:200px;
+    }
+    .navbar .navbar-brand .aaa-logo{
+        width:150px;
+        height:80px; 
+        margin-left:20%;   
+    }
+    .navbar .navbar-header-text{
+        font-size: 26px;
+        margin-left:0;   
+        padding-left:0;    
+        margin-top:10%;
+    }
+} 
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar .navbar-header-text{
+        font-size: 46px;
+        line-height:43px;
+        margin-left:-100%;
+        margin-top:20%;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1024px) {
+    .navbar .navbar-header-text{
+        font-size: 46px;
+        margin-left:-30%;   
+        padding-left:0;    
+        margin-top:10%;
+    }
+
+}
+
+  
+
+    @media  (min-width : 1025px) {
+        
+        .navbar{
+            background-color: #3774AF !important;
+            width:100%;
+            height:164px;
+            position: fixed;
+      }
+
+    .navbar .navbar-header-text{
+        font-size: 36px;
+        margin-left:-70%;   
+        padding-left:0;    
+        margin-top:10%;
+      
+    }
+   }

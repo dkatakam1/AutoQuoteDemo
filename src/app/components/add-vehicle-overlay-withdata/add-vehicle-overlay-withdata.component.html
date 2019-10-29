@@ -1,0 +1,38 @@
+<div class="container-fluid scrollit">
+    <div class="row">
+        <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 list-vehicles-header">
+             <h3>SELECT VEHICLES</h3>
+        </div>
+        <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="list-vehicles-pre-text">
+                <p> We found {{vehiclesCount}} vehicles associated with this address. Select the vehicles you want to add to the policy.
+                </p>
+            </div>
+            <div>
+                <table>
+                <tr *ngFor="let vehicle of vehicles; let i = index">
+                    <td class="checkbox-cell">
+                        <label class="container">
+                            <input type="checkbox" (change)=vehicleSelected(i)>
+                            <span class="checkmark"></span>
+                        </label>
+                    </td>
+                    <td class="vehicle-cell">
+                        <span  class="vehicle-details">{{vehicle.year}} {{vehicle.make}} {{vehicle.model}} <br></span>
+                        <span  class="vin-details">VIN: {{vehicle.vin}}</span>
+                    </td>
+                </tr>
+               </table>
+            </div>
+            <div class="list-vehicles-post-text">
+                <p>You can add other vehicles later</p>
+            </div>
+            <div class="continue-button" (click)="displaySelectedVehicles()">
+                <button>Continue</button>
+            </div>
+        </div>
+        <div id="modal-backdrop" class="modal-backdrop-blue modal-transition"></div>
+    </div>
+</div>
+
+

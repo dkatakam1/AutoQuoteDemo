@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@font-face {
+  font-family: 'Mission Gothic Black';
+  src: url(/assets/fonts/MissionGothicBlack.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Mission Gothic Black Italic';
+  src: url(/assets/fonts/MissionGothicBlackItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Mission Gothic Bold';
+  src: url(/assets/fonts/MissionGothicBold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Mission Gothic Bold Italic';
+  src: url(/assets/fonts/MissionGothicBoldItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Mission Gothic Light';
+  src: url(/assets/fonts/MissionGothicLight.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Mission Gothic Light Italic';
+  src: url(/assets/fonts/MissionGothicLightItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Mission Gothic Regular';
+  src: url(/assets/fonts/MissionGothicRegular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Mission Gothic Regular Italic';
+  src: url(/assets/fonts/MissionGothicRegularItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Mission Gothic Thin';
+  src: url(/assets/fonts/MissionGothicThin.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Mission Gothic Thin Italic';
+  src: url(/assets/fonts/MissionGothicThinItalic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Arial Black';
+  src: url(/assets/fonts/ArialBlack.otf) format('truetype');
+}

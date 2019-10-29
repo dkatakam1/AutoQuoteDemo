@@ -1,0 +1,16 @@
+<div class="card mx-auto" >
+    <div class="card-header">
+        SELECT VEHICLES
+    </div>
+    <div class="card-body">
+        We found 2 vehicles associated with this address. Select the vehicles you want to add to the policy.
+
+        You can add other vehicles later.
+        <button type="button"
+                class="btn btn-outline-dark"
+                (click)="activeModal.close('Close click')">
+                Continue
+        </button>
+        <div id="modal-backdrop" class="modal-backdrop-blue modal-transition"></div>
+    </div>
+</div>

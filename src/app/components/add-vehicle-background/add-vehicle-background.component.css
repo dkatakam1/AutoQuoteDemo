@@ -1,0 +1,78 @@
+
+.container-fluid{
+    margin-top:40px;
+}
+.vehicles-header{
+    padding-left:0!important;
+}
+
+.vehicles-header h2 {
+    font-family:'Mission Gothic Regular', sans-serif; 
+}
+
+.vehicles-header p{
+    font-family:'Mission Gothic Light', sans-serif; 
+}
+
+.add-vehicle{
+    border:1px dashed #484848;
+    font-family:'Mission Gothic Regular', sans-serif; 
+    color:#484848;
+    padding-top:18px;
+}
+
+.fa-plus-circle{
+    color:#484848;
+}
+
+.vehicle-details{
+    font-size:18px;
+    color:#003893;
+    font-family:'Mission Gothic Regular', sans-serif; 
+  }
+  
+  .vin-details{
+    font-size:14px;
+    color:grey;
+  }
+
+  tr{
+    border-bottom:1px solid #D3D3D3;
+  }
+
+  table{
+    width:100%;
+    margin: 35px 0px;
+  }
+
+  .continue-button, .remove-button{
+      margin: 20px;
+  }
+  
+  .continue-button button{
+    background-color: #FFF;
+    border:1px solid #003893;
+    font-family:'Mission Gothic Regular', sans-serif; 
+    color: #003893;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+  }
+
+  .remove-button button{
+    background-color: #FFF;
+    font-family:'Mission Gothic Regular', sans-serif; 
+    border:none;
+    color: #003893;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+  }
+  
+  .remove-vehicle{
+      display:none;
+  }
