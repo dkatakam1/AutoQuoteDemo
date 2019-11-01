@@ -1,5 +1,137 @@
-.card{
-    width:500px;
+.list-vehicles-header{
+  height: 80px;
+  background-color: #E6F5F5;
+  border-top-left-radius: 5px;
+  border-top-right-radius:5px;
+}
+
+.list-vehicles-header h3 {
+  text-align:center;
+  padding-top: 25px;
+  color:darkblue;
+  font-family: 'Mission Gothic Bold', sans-serif;
+}
+
+.list-vehicles-pre-text{
+  margin-top:20px;
+  font-size:14px;
+  color:blue;
+  font-family:  sans-serif;
+}
+
+.list-vehicles-post-text{
+  margin-top:20px;
+  font-size:18px;
+  color:black;
+  font-family: 'Mission Gothic Light', sans-serif;
+}
+
+table{
+  width:100%;
+  margin: 35px 0px;
+}
+
+.scrollit {
+  overflow-y:scroll;
+  height:400px;
+}
+
+.checkbox-cell{
+  width:80px;
+  padding-bottom:18px;
+  padding-left:20px;
+}
+
+.vehicle-cell{
+  border-bottom:1px solid #D3D3D3;
+}
+
+/* Checkbox styling */
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  align-content: center;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border:2px solid #808080;
+  border-radius:2px;
+  background-color: #FFF;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #3774AF;
+  border:none;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* End of Checkbox Styling */
+
+.vehicle-details{
+  font-size:18px;
+  color:black;
+  font-family: 'Mission Gothic Regular', sans-serif;
+}
+
+.vin-details{
+  font-size:16px;
+  color:grey;
+  font-family:  sans-serif;
+}
+
+.continue-button{
+  margin-top:30px;
+  margin-bottom:30px;
+}
+
+.continue-button button{
+  background-color:darkblue;
+  font-family: 'Mission Gothic Regular', sans-serif;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
 }
 
 #modal-backdrop {

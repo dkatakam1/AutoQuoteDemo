@@ -26,6 +26,14 @@
     font-weight:bold;
 }
 
+.edit-form {
+    font-size: 15px;
+    font-weight: normal;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 5%;
+}
+
 form{
     background-color: #FFF;
     padding:20px;
@@ -58,11 +66,6 @@ select.form-control:focus, input.form-control:focus{
 select.form-control {
     margin-top:-10px;
 }
-
-.dark-blue-bg-modal{
-    background-color:darkblue;
-}
-
 
 .btnSearch {
     font-family:'Mission Gothic Light', sans-serif; 

@@ -12,10 +12,11 @@ import { AddVehicleOverlayWithdataComponent } from './components/add-vehicle-ove
 export class AppComponent implements OnInit {
   title = 'VehicleScreens';
 
+
   constructor(private modalService: NgbModal) {}
 
   ngOnInit(){
-    this.openBackDropCustomClass();
+   //this.openBackDropCustomClass();
   }
 
   open() {
@@ -23,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   openBackDropCustomClass() {
-    this.modalService.open(AddVehicleOverlayWithdataComponent, {backdropClass: 'dark-blue-bg-modal', centered: true});
+    this.modalService.open(AddVehicleOverlayComponent, {backdropClass: 'dark-blue-bg-modal', centered: true});
   }
 
 }

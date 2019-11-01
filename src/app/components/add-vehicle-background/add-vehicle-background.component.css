@@ -6,6 +6,11 @@
     padding-left:0!important;
 }
 
+.vehicles-list{
+  background-color:#FFF;
+  border-radius:5px;
+}
+
 .vehicles-header h2 {
     font-family:'Mission Gothic Regular', sans-serif; 
 }
@@ -19,6 +24,10 @@
     font-family:'Mission Gothic Regular', sans-serif; 
     color:#484848;
     padding-top:18px;
+}
+
+.add-vehicle p{
+  cursor: pointer;
 }
 
 .fa-plus-circle{
@@ -36,9 +45,6 @@
     color:grey;
   }
 
-  tr{
-    border-bottom:1px solid #D3D3D3;
-  }
 
   table{
     width:100%;

@@ -1,0 +1,207 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-11 col-lg-11 col-md-11 col-sm-11 col-xl-9">
+            <div class="row">
+                <h2 class="titleAuto">VEHICLE DETAILS</h2>
+                <p>Enter details for this vehicle.</p>
+            </div>
+            <form>
+<div>
+                        <div class="row">
+                            <p>Enter VIN or Year, Make and Model.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-12 col-md-6 col-sm-12 col-xl-12">
+                                <p>Vehicle Identification Number (VIN)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-3 col-md-6 col-sm-12 col-xl-4">
+                                <div class="form-group">
+                                    <input formcontrolname="vin" type="text">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-2 col-md-6 col-sm-12 col-xl-2">
+                                <button class="button btnSearch">Look Up</button>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <span class="vehiclesTitles">Or</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-2 col-md-6 col-sm-12 col-xl-2">
+                                <p>Year</p>
+                                <div class="form-group">
+                                 <select  formcontrolname="year">
+                                    <option value=""></option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2010">2010</option>              
+                                 </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-2 col-md-6 col-sm-12 col-xl-2">
+                                <p>Make</p>
+                                <div class="form-group">
+                                    <select formcontrolname="make">
+                                    <option value=""></option>
+                                    <option value="57_ACURA">ACURA</option>
+                                    <option value="45_ALFA ROMEO">ALFA ROMEO</option>
+                                    <option value="48_ASTON MARTIN">ASTON MARTIN</option>
+                                    <option value="21_AUDI">AUDI</option>
+                                    <option value="47_BENTLEY">BENTLEY</option>
+                                    <option value="79_BLUE BIRD">BLUE BIRD</option>  
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-3 col-md-6 col-sm-12 col-xl-3">
+                                <p>Model</p>
+                                <div class="form-group">
+                                    <select formcontrolname="model">
+                                    <option value="" ng-reflect-value=""></option>
+                                    <option value="97_C-MAX HYBRID STATION WAGO">C-MAX HYBRID STATION WAGO</option>
+                                    <option value="98_C-MAX PLUG-IN HYBRID STAT">C-MAX PLUG-IN HYBRID STAT</option>
+                                    <option value="93_FIESTA 4DR">FIESTA 4DR</option>
+                                    <option value="94_FIESTA STATION WAGON">FIESTA STATION WAGON</option>
+                                    <option value="74_FOCUS 4DR">FOCUS 4DR</option>
+                                    <option value="96_FOCUS ELECTRIC STATION WA">FOCUS ELECTRIC STATION WA</option>                     
+                                   </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-3 col-md-6 col-sm-12 col-xl-3">
+                                <p>Body Style/ Trim</p>
+                                <div class="form-group">
+                                    <select  formcontrolname="trim">
+                                     <option disabled="" value=""></option>
+                                     <option value="34_S">S</option>
+                                     <option value="18_SE">SE</option>
+                                     <option value="89_TITANIUM">TITANIUM</option>
+                                   </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div>
+                    <hr>
+                        <div class="row">
+                            <div class="col-12 col-lg-10 col-md-10 col-sm-12 col-xl-7">
+                                <h2 class="vehiclesDesc">2017 FORD FIESTA TITANIUM</h2>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <hr>
+    
+                <div id="vehicle-div">
+                        <div class="row">
+                            <div class="col-12 col-lg-4 col-md-6 col-sm-12 col-xl-4">
+                                <p>Type Description </p>
+                                <div class="form-group col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                    <select  formcontrolname="vehicleTypeDescription">
+                                      <option value=""></option>
+                                      <option value="Private Passenger">Private Passenger</option>
+                                      <option value="Low Speed Vehicle">Low Speed Vehicle</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-12 col-lg-12 col-md-6 col-sm-12 col-xl-12">
+                                <p>Vehicle Ownership</p>
+                                <div class="form-group col-12 col-lg-3 col-md-12 col-sm-12 col-xl-4">
+                                    <select formcontrolname="vehicleOwnership">
+                                      <option value=""></option>
+                                      <option value="Owned">Owned</option>
+                                      <option value="Financed">Financed</option>
+                                      <option value="Leased">Leased</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                <p>Was this vehicle previously titled?</p> 
+                                <div class="form-group col-12 col-lg-3 col-md-4 col-sm-12 col-xl-3">
+                                    <div class="switch-radio-group">
+                                        <span>
+                                            <input formcontrolname="isPreviouslyTitled" type="radio">
+                                            <span>Yes</span>
+                                        </span>
+                                        <span>
+                                            <input formcontrolname="isPreviouslyTitled" type="radio">
+                                            <span>No</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                <p>Is the vehicle garaged at the policy address?</p>
+                                <div class="form-group col-12 col-lg-3 col-md-4 col-sm-12 col-xl-3">
+                                    <div class="switch-radio-group">
+                                        <span>
+                                            <input formcontrolname="isGaragedAtPolicyAddress" type="radio">
+                                            <span>Yes</span>
+                                        </span>
+                                        <span>
+                                            <input formcontrolname="isGaragedAtPolicyAddress" type="radio">
+                                            <span>No</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>      
+    
+                        <div class="row">
+                            <h2 class="title">Vehicle Discounts</h2>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <p>Your vehicle features may give you discounts on your policy.</p>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-8 col-lg-2 col-md-2 col-sm-8 col-xl-2">
+                                    <p>Anti-Theft Device</p>
+                                     <div>
+                                        <p>Passive</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-3 col-md-6 col-sm-12 col-xl-3">
+                                    <p>Anti-Lock Brakes</p>
+                                     <div>
+                                        <p>Yes</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-3 col-md-6 col-sm-12 col-xl-3">
+                                    <p>Airbags</p>
+                                <div>
+                                        <p>Yes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+    </div>

@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
-import { Router } from '@angular/router';
-
 
 @Component({
-  selector: 'app-add-vehicle',
-  templateUrl: './add-vehicle.component.html',
-  styleUrls: ['./add-vehicle.component.css']
+  selector: 'app-add-vehicle-lookup',
+  templateUrl: './add-vehicle-lookup.component.html',
+  styleUrls: ['./add-vehicle-lookup.component.css']
 })
-export class AddVehicleComponent implements OnInit {
+export class AddVehicleLookupComponent implements OnInit {
 
-
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   form: FormGroup;
   typeDescOptions = ['', 'Private Passenger', 'Low Speed Vehicle'];
@@ -28,7 +25,7 @@ export class AddVehicleComponent implements OnInit {
  
 
   ngOnInit() {
-      this.form = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       vin: ['', []],
       year: ['', []],
       make: ['', []],
@@ -41,6 +38,7 @@ export class AddVehicleComponent implements OnInit {
     });
 
     this.initializeDropDowms();
+
   }
 
   initializeDropDowms(){
@@ -90,10 +88,4 @@ export class AddVehicleComponent implements OnInit {
     console.log(this.form.get('isGaragedAtPolicyAddress').value);
   }
 
-  lookupVehicle(){
-    this.router.navigate(['/lookupVehicle']);
-  }
-
- 
 }
-

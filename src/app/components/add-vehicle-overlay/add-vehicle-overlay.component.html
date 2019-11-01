@@ -1,13 +1,26 @@
-<div class="card mx-auto" >
-    <div class="card-header">
-        Header
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 list-vehicles-header">
+                 <h3>NO VEHICLES FOUND</h3>
+            </div>
+            <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="list-vehicles-pre-text">
+                    <p> We could not find any vehicles with your information. Please add a vehicle to the policy.
+                    </p>
+                </div>
+                <div>
+                        <br><br><br>
+                </div>
+ 
+                <div class="continue-button" (click)="displaySelectedVehicles()">
+                    <button>Add A Vehicle</button>
+                </div>
+
+                <br><br><br>
+            </div>
+            <div id="modal-backdrop" class="modal-backdrop-blue modal-transition"></div>
+        </div>
     </div>
-    <div class="card-body">
-        <button type="button"
-                class="btn btn-outline-dark"
-                (click)="activeModal.close('Close click')">
-                Add Vehicle
-        </button>
-        <div id="modal-backdrop" class="modal-backdrop-blue modal-transition"></div>
-    </div>
-</div>
+    
+    
+    

@@ -1,3 +1,5 @@
+<app-header></app-header>
+<app-status-bar activeStepId="vehicles"></app-status-bar>
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12 col-xl-10 col-lg-10 col-md-10 col-sm-10 vehicles-header">
@@ -6,7 +8,7 @@
         </div>
     </div>
     <div class="row justify-content-center" *ngIf="displayVehicles > 0">
-        <div class="col-12 col-xl-10 col-lg-10 col-md-10 col-sm-10 vehicles-header">
+        <div class="col-12 col-xl-10 col-lg-10 col-md-10 col-sm-10 vehicles-list">
                 <table>
                         <tr *ngFor="let vehicle of vehicles; let i = index" [ngClass]="{'remove-vehicle' : vehicles[i].removed}">
                             <td class="vehicle-cell">
@@ -14,7 +16,7 @@
                                 <span  class="vin-details">VIN: {{vehicle.vin}}</span>
                             </td>
                             <td>
-                                <div class="continue-button" (click)="provideDetails()">
+                                <div class="continue-button" (click)="provideDetails(i)">
                                     <button>Provide Details</button>
                                 </div>
                             </td>
@@ -26,9 +28,9 @@
                         </tr>
                 </table>
         </div>
-    </div>
+    </div><br><br>
     <div class="row justify-content-center">
-            <div class="col-12 col-xl-10 col-lg-10 col-md-10 col-sm-10 add-vehicle">
+            <div class="col-12 col-xl-10 col-lg-10 col-md-10 col-sm-10 add-vehicle" (click)="addNewVehicle()">
                 <p><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;Add vehicle</p>
             </div>
         </div>
