@@ -13,10 +13,10 @@
                         <div>
                             <div class="row">
                                 <div class="col-12 col-lg-10 col-md-10 col-sm-12 col-xl-7">
-                                    <h2 class="vehiclesDesc">2017 FORD FIESTA TITANIUM
-                                            <span class="edit-form"><a [routerLink]="['/provideDetails']">Edit</a></span>
+                                    <h2 class="vehicle-description">{{cYear}} {{cMake}} {{cModel}} {{cTrim}}
+                                            <span class="edit-form"><a [routerLink]="['/provideDetails']" [queryParams]="{vin:cVin, year : cYear, make: cMake, model:cModel, trim:cTrim}">Edit</a></span>
                                     </h2>
-                                    <p class="subTitleAuto">VIN: 3GCPCREC0EG352446</p>
+                                    <p class="vehicle-vin">VIN: {{cVin}}</p>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                                 </div>
                                 
                                 <div class="row">
-                                    <div class="col-8 col-lg-2 col-md-2 col-sm-8 col-xl-2 page-auto-vehicles my-3">
+                                    <div class="col-12 col-lg-3 col-md-6 col-sm-12 col-xl-3 page-auto-vehicles my-3">
                                         <p>Anti-Theft Device</p>
                                          <div class="move-up">
                                             <p>Passive</p>
@@ -140,3 +140,4 @@
                 </div>
             </div>
         </div>
+        <app-footer></app-footer>

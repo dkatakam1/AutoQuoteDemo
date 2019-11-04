@@ -17,7 +17,7 @@ export class BridgeComponentComponent implements OnInit {
   nextPage(){
     // Make API call to detect if there are any vehicles for the registered address
     //If yes pass 2 to the route or pass 1 if no data
-    this.router.navigate(['/showOverlay', 1]);
+    this.router.navigate(['/showOverlay', 2]);
   }
 
 }

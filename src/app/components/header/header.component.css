@@ -1,112 +1,112 @@
-.navbar{
+.container-fluid{
     background-color: #3774AF !important;
-    width:1024px;
+    width:100%;
     height:90px;
     position: fixed;
+    justify-content: space-around;
 }
 
-.navbar .navbar-brand{
+.navbar-brand{
     color : #FFF;
+    margin:auto;
 }
 
-
-.navbar .navbar-brand .aaa-logo{
+ .navbar-brand .aaa-logo{
     width:150px;
     height:80px; 
-    margin-left: -140.5px;  
-
 }
 
-
-.navbar .navbar-header{
-    color : #FFF;
+.logo-col{
+    z-index:-1;
 }
 
-.navbar .navbar-header-text{
-    font-size: 30px;
-    line-height:43px;
-    left:30%;
-    position:relative;
+.header-text-col{
+    z-index:2;
+    position: absolute;
+}
+.navbar-header-text{
     font-family:Helvetica;
-    color: #FFF !important;
-
-}
-
-.container-fluid{
-    /* flex-wrap: wrap; */
-    justify-content: space-around;
+    color: #FFF !important; 
+    margin:auto;
+    font-size:36px;
 }
 
 
 
 /* Media Queries for Responsiveness */
 
-
-
 /* Extra small devices (portrait phones, less than 576px) */
 @media (min-width: 320px) and (max-width: 575px) {
-
-    .navbar{
-        width:100%;
-        height:200px;
+    .container-fluid{
+        height:180px;    
     }
-    .navbar .navbar-brand .aaa-logo{
+
+    .navbar-brand .aaa-logo{
         width:150px;
         height:80px; 
-        margin-left:20%;   
     }
-    .navbar .navbar-header-text{
-        font-size: 26px;
-        margin-left:0;   
-        padding-left:0;    
+    .logo-col{
+        z-index:0;
         margin-top:10%;
+    }
+    
+    .header-text-col{
+        z-index:0;
+        margin-top:25%;
+        padding-bottom:5%;
+    }
+    
+    .navbar-header-text{
+        font-family:Helvetica;
+        color: #FFF !important; 
+        margin:auto;
+        font-size:140%;
     }
 } 
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767px) {
+    .container-fluid{
+        height:180px;    
+    }
 
-
+    .navbar-brand .aaa-logo{
+        width:150px;
+        height:80px; 
+    }
+    .logo-col{
+        z-index:0;
+        margin-top:10%;
+    }
+    
+    .header-text-col{
+        z-index:0;
+        margin-top:25%;
+        padding-bottom:5%;
+    }
+    
+    .navbar-header-text{
+        font-family:Helvetica;
+        color: #FFF !important; 
+        margin:auto;
+        font-size:140%;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991px) {
-    .navbar .navbar-header-text{
-        font-size: 46px;
-        line-height:43px;
-        margin-left:-100%;
-        margin-top:20%;
+@media (min-width: 768px) and (max-width: 991px) {   
+    .navbar-header-text{
+        font-size:135%;
     }
-
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1024px) {
-    .navbar .navbar-header-text{
-        font-size: 46px;
-        margin-left:-30%;   
-        padding-left:0;    
-        margin-top:10%;
-    }
 
 }
 
   
 
-    @media  (min-width : 1025px) {
-        
-        .navbar{
-            background-color: #3774AF !important;
-            width:100%;
-            height:90px;
-            position: fixed;
-      }
-
-    .navbar .navbar-header-text{
-        font-size: 36px;
-        margin-left:-70%;   
-        padding-left:0;    
-        margin-top:10%;
-      
-    }
-   }
+@media  (min-width : 1025px) {
+    
+}

@@ -2,6 +2,10 @@
 .container-fluid{
     margin-top:40px;
 }
+/*Styling for header ---
+  VEHICLES
+  Provide details for each vehicle.
+--- */
 .vehicles-header{
     padding-left:0!important;
 }
@@ -82,3 +86,41 @@
   .remove-vehicle{
       display:none;
   }
+
+  
+ /* Media Queries for Responsiveness */
+
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (min-width: 320px) and (max-width: 400px) {
+  .vehicles-header{
+    margin-left:10px;
+  }
+    
+} 
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 401px) and (max-width: 767px) {
+  .vehicles-header{
+    margin-left:10px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1024px) {
+  
+}
+
+
+/* Extra Large devices (desktops, 1024px and up) */
+  @media  (min-width : 1025px) {
+
+ }

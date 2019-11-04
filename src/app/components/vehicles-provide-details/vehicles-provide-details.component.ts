@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicles-provide-details',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VehiclesProvideDetailsComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private activatedRoute : ActivatedRoute) { }
+  constructor(private router:Router,private formBuilder: FormBuilder, private activatedRoute : ActivatedRoute) { }
 
   form: FormGroup;
   typeDescOptions = ['', 'Private Passenger', 'Low Speed Vehicle'];
@@ -22,6 +22,8 @@ export class VehiclesProvideDetailsComponent implements OnInit {
   isGaragedAtPolicyAddressNo = false;
   isPreviouslyTitledYes = false;
   isPreviouslyTitledNo = false;
+  isVinIncomplete = true;
+  isVehicleInfoIncomplete = true;
   cYear = '';
   cMake = '';
   cModel = '';
@@ -52,6 +54,23 @@ export class VehiclesProvideDetailsComponent implements OnInit {
         this.cVin = queryParams.vin;
     })
   }
+
+  validateVin(event: any){
+    if(event.target.value.length == 17){
+      this.isVinIncomplete = false;
+    } else {
+      this.isVinIncomplete = true;
+    }
+}
+
+validateVehicleInfo(){
+  if(this.form.controls.year.value != '' && 
+    this.form.controls.make.value != '' && 
+    this.form.controls.model.value != '' && 
+    this.form.controls.trim.value != '' )
+    return true;
+  else return false;
+}
 
   initializeDropDowns(){
 
@@ -85,6 +104,14 @@ export class VehiclesProvideDetailsComponent implements OnInit {
         this.isPreviouslyTitledYes = false;
       }
     }
+
+    if(targetId == "year" || targetId == "make" || targetId == "model" || targetId == "trim"  ){
+      if(this.validateVehicleInfo()){
+        this.isVehicleInfoIncomplete = false;
+      } else {
+        this.isVehicleInfoIncomplete = true;
+      }
+  }
     
   }
 
@@ -99,5 +126,35 @@ export class VehiclesProvideDetailsComponent implements OnInit {
     console.log(this.form.get('isPreviouslyTitled').value);
     console.log(this.form.get('isGaragedAtPolicyAddress').value);
   }
+  lookupVehicle(input: string){
+    let vin='';
+    let year='';
+    let make='';
+    let model='';
+    let trim='';
 
+    if(input == 'vin'){
+      console.log("Lookup the data source using : " + this.form.get('vin').value);
+      // Service/API call for vin lookup. 
+      vin = this.form.get('vin').value;; // hardcoing the values for now
+      year = '2009';
+      make = 'TOYO';
+      model = 'LE';
+      trim = 'TITANIUM';
+
+    } else {
+      console.log("Lookup the data source using : " + this.form.get('year').value);
+      console.log("Lookup the data source using : " + this.form.get('make').value);
+      console.log("Lookup the data source using : " + this.form.get('model').value);
+      console.log("Lookup the data source using : " + this.form.get('trim').value);
+       // Service/API call for vehicle info lookup
+       // hardcoing the values for now
+       vin = '3GCPCREC0EG352446';
+       year = this.form.get('year').value;
+       make = this.form.get('make').value;
+       model = this.form.get('model').value;
+       trim = this.form.get('trim').value;
+    }
+    this.router.navigate(['/lookupVehicle'], {queryParams : {'vin':vin, 'year' : year, 'make': make, 'model':model, 'trim':trim}});
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-vehicle-lookup',
@@ -8,7 +9,7 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 })
 export class AddVehicleLookupComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private activatedRoute: ActivatedRoute) { }
 
   form: FormGroup;
   typeDescOptions = ['', 'Private Passenger', 'Low Speed Vehicle'];
@@ -21,6 +22,11 @@ export class AddVehicleLookupComponent implements OnInit {
   isGaragedAtPolicyAddressNo = false;
   isPreviouslyTitledYes = false;
   isPreviouslyTitledNo = false;
+  cYear = '';
+  cMake = '';
+  cModel = '';
+  cTrim = '';
+  cVin = '';
 
  
 
@@ -38,6 +44,15 @@ export class AddVehicleLookupComponent implements OnInit {
     });
 
     this.initializeDropDowms();
+
+    
+    this.activatedRoute.queryParams.subscribe(queryParams => {
+        this.cVin = queryParams.vin;
+        this.cYear = queryParams.year;
+        this.cMake = queryParams.make;
+        this.cModel = queryParams.model;
+        this.cTrim = queryParams.trim;
+    });
 
   }
 

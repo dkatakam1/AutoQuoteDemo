@@ -15,6 +15,7 @@ import { AddVehicleOverlayWithdataComponent } from './components/add-vehicle-ove
 import { VehiclesProvideDetailsComponent } from './components/vehicles-provide-details/vehicles-provide-details.component';
 import { AddVehicleLookupComponent } from './components/add-vehicle-lookup/add-vehicle-lookup.component';
 import { BridgeComponentComponent } from './components/bridge-component/bridge-component.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BridgeComponentComponent } from './components/bridge-component/bridge-c
     AddVehicleOverlayWithdataComponent,
     VehiclesProvideDetailsComponent,
     AddVehicleLookupComponent,
-    BridgeComponentComponent
+    BridgeComponentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

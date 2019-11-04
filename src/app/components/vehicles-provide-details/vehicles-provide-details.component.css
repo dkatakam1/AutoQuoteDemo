@@ -3,6 +3,10 @@
     -webkit-box-direction: normal;
 }
 
+/*Styles for the header ---
+    'VEHICLE DETAILS
+    Enter details for this vehicle.'
+ ---*/
 .vehicles-header h3 {
     font-family:'Mission Gothic Bold', sans-serif; 
 }
@@ -11,27 +15,17 @@
     font-family:'Mission Gothic Light', sans-serif; 
 }
 
-.vehicle-details {
-    background-color: #FFF;
-    padding-top:20px;
-}
-
-.vehicle-details #enter-details{
-    font-family:'Mission Gothic Light', sans-serif; 
-}
-
-.vehicle-details #vin{
-    font-family:'Mission Gothic Regular', sans-serif; 
-    font-size:15px;
-    font-weight:bold;
-}
-
+/*Styles for the form with white background */
 form{
     background-color: #FFF;
     padding:20px;
     border-radius:5px;
 }
 
+/* Styles for the header of VIN lookup input field ---
+    Enter VIN or Year, Make and Model.
+    Vehicle Identification Number (VIN)
+---*/
 .enter-details p, .enter-vin p{
     font-family: Helvetica;
     font-size: 16px !important;
@@ -43,12 +37,12 @@ form{
     margin-top:-10px;
 }
 
+/*Common styling for input text and select */
 .form-control {
     background-color: #F6F6F6;
     border: 1px solid #dedede;
     border-radius: 0;
 }
-
 
 select.form-control:focus, input.form-control:focus{
     border:1px solid #2B33AC;
@@ -59,32 +53,39 @@ select.form-control {
     margin-top:-10px;
 }
 
+select, option{
+    font-family:'Mission Gothic Light', sans-serif;
+    color:black;
+}
+
+/*Styles for "lookup" button */
 .btnSearch {
     font-family:'Mission Gothic Light', sans-serif; 
     text-align: center;
-background: #3E7ACF;
-border: 1px solid #3E7ACF;
-width: 50% !important;
-color: #ffffff;
-border-radius: 5px 5px;
-padding: 10px;
-font-weight: bold;
-min-width: 80px;
-position: relative;
-z-index: 0;
-display: inline-block;
-text-overflow: ellipsis;
-text-transform: none;
-white-space: nowrap;
-cursor: pointer;
-user-select: none;
-contain: content;
-font-style: inherit;
-font-variant: inherit;
-line-height: 0.7;
-margin-left:5px;
+    background: #3E7ACF;
+    border: 1px solid #3E7ACF;
+    width: 50% !important;
+    color: #ffffff;
+    border-radius: 5px 5px;
+    padding: 10px;
+    font-weight: bold;
+    min-width: 80px;
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    text-overflow: ellipsis;
+    text-transform: none;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    contain: content;
+    font-style: inherit;
+    font-variant: inherit;
+    line-height: 0.7;
+    margin-left:5px;
 }
 
+/* Styles for "Or" */
 .vehiclesTitles {
     font-family:'Mission Gothic Regular', sans-serif; 
     font-size: 16px !important;
@@ -93,6 +94,13 @@ margin-left:5px;
     padding:20px;
 }
 
+.hide-lookup{
+    display: none;
+}
+
+/* Styles for the vehicle search headers ---
+    Year, Make , Model, Body Style/Trim
+---*/
 .page-auto-vehicles p, .make p, .model p, .body-style p, .type-description p{
     font-family: Helvetica;
     font-size: 16px !important;
@@ -100,11 +108,14 @@ margin-left:5px;
     color: #3B3B3B !important;
 }
 
+/* Spacing between the drop downs */
 .adjust-gutter{
     margin-left:10px;
 }
 
-.vehiclesDesc {
+
+/*Styles for vehicle details displayed after the lookup */
+.vehicle-description {
     font-family:'Mission Gothic Regular', sans-serif;
     text-align: left;
     color: #003893;
@@ -112,7 +123,8 @@ margin-left:5px;
     font-size: 20px !important;
 }
 
-.subTitleAuto{
+/* Styles for VIN */
+.vehicle-vin{
     font-family: Helvetica;
     font-weight: normal;
     font-style: normal;
@@ -128,11 +140,10 @@ margin-left:5px;
     margin-left:0px!important;
 }
 
-select, option{
-    font-family:'Mission Gothic Light', sans-serif;
-    color:black;
+/*Radio button styling */
+.switch-radio-group {
+    overflow: hidden;
 }
-
 .switch-radio-group span input[type="radio"] {
     opacity: 0;
     width: 100%;
@@ -148,7 +159,6 @@ select, option{
     transition: all 0.5s ease; 
     
 }
-
 .switch-radio-group span {
     margin-bottom: 10px;
     width: 50%;
@@ -160,29 +170,25 @@ select, option{
     height: 44px;
 }
 
-.switch-radio-group {
-    overflow: hidden;
-}
-
 .switch-radio-group span span {
-font-family:'Mission Gothic Regular',sans-serif;
-width: 100%;
-background: #F6F6F6;
-border: 1px solid #B1B1B1 !important;
-border-radius: 5px;
-border-top-right-radius: 0;
-border-bottom-right-radius: 0;
-text-align: center;
-position: absolute;
-left: 0;
-top: 0;
-height: 44px;
-line-height: 44px;
-pointer-events: none;   
-z-index: 0;
-color: #000;
-font-weight: normal;
-font-size: 16px;
+    font-family:'Mission Gothic Regular',sans-serif;
+    width: 100%;
+    background: #F6F6F6;
+    border: 1px solid #B1B1B1 !important;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 44px;
+    line-height: 44px;
+    pointer-events: none;   
+    z-index: 0;
+    color: #000;
+    font-weight: normal;
+    font-size: 16px;
 }
 
 .switch-radio-group span + span span {
@@ -193,6 +199,10 @@ font-size: 16px;
     border-left:0px;
 }
 
+/* Styling for ---
+Vehicle Discounts
+Your vehicle features may give you discounts on your policy.
+---*/
  .discounts-title {
     margin-top: 30px !important;
     padding-bottom: 10px !important;
@@ -205,16 +215,17 @@ font-size: 16px;
  }
 
  .discounts-header p{
- font-family: Helvetica;
- font-size: 16px;
- font-weight: normal;
- font-style: normal;
- font-stretch: normal;
- line-height: 1.5;
- letter-spacing: normal;
- text-align: left;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
  }
 
+ /*Control the vertical spacing between the rows*/
  .move-up{
      margin-top:-15px;
  }
@@ -253,10 +264,7 @@ font-size: 16px;
   
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) and (max-width: 1024px) {
-  
     
-    
-  
   }
   
   

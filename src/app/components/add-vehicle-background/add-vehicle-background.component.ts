@@ -27,7 +27,7 @@ export class AddVehicleBackgroundComponent implements OnInit {
       if(params.id == 2) this.isVehiclesFound = true;
     })
 
-    this.openBackDropCustomClass();
+   // this.openBackDropCustomClass();
     this.shareSvc.currentVehicle.subscribe(vehicles => {
         this.vehicles = [...vehicles];
         this.displayVehicles = this.vehicles.length;

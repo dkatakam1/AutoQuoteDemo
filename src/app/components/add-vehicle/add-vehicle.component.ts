@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
+import { Key } from 'protractor';
 
 
 @Component({
@@ -24,12 +25,13 @@ export class AddVehicleComponent implements OnInit {
   isGaragedAtPolicyAddressNo = false;
   isPreviouslyTitledYes = false;
   isPreviouslyTitledNo = false;
+  isVinIncomplete = true;
+  isVehicleInfoIncomplete = true;
 
- 
 
   ngOnInit() {
       this.form = this.formBuilder.group({
-      vin: ['', []],
+      vin: ['', [Validators.pattern('[A-Za-z0-9]'), Validators.minLength(17)]],
       year: ['', []],
       make: ['', []],
       model: ['', []],
@@ -40,10 +42,10 @@ export class AddVehicleComponent implements OnInit {
       isGaragedAtPolicyAddress: ['', Validators.required]
     });
 
-    this.initializeDropDowms();
+    this.initializeDropDowns();
   }
 
-  initializeDropDowms(){
+  initializeDropDowns(){
 
     this.yearList.push('2001');
     this.makeList.push('ASTON MARTIN');
@@ -76,6 +78,30 @@ export class AddVehicleComponent implements OnInit {
       }
     }
     
+    if(targetId == "year" || targetId == "make" || targetId == "model" || targetId == "trim"  ){
+        if(this.validateVehicleInfo()){
+          this.isVehicleInfoIncomplete = false;
+        } else {
+          this.isVehicleInfoIncomplete = true;
+        }
+    }
+  }
+
+  validateVin(event: any){
+      if(event.target.value.length == 17){
+        this.isVinIncomplete = false;
+      } else {
+        this.isVinIncomplete = true;
+      }
+  }
+
+  validateVehicleInfo(){
+    if(this.form.controls.year.value != '' && 
+      this.form.controls.make.value != '' && 
+      this.form.controls.model.value != '' && 
+      this.form.controls.trim.value != '' )
+      return true;
+    else return false;
   }
 
   displayFormValues(){
@@ -90,8 +116,36 @@ export class AddVehicleComponent implements OnInit {
     console.log(this.form.get('isGaragedAtPolicyAddress').value);
   }
 
-  lookupVehicle(){
-    this.router.navigate(['/lookupVehicle']);
+  lookupVehicle(input: string){
+    let vin='';
+    let year='';
+    let make='';
+    let model='';
+    let trim='';
+
+    if(input == 'vin'){
+      console.log("Lookup the data source using : " + this.form.get('vin').value);
+      // Service/API call for vin lookup. 
+      vin = this.form.get('vin').value;; // hardcoing the values for now
+      year = '2009';
+      make = 'TOYO';
+      model = 'LE';
+      trim = 'TITANIUM';
+
+    } else {
+      console.log("Lookup the data source using : " + this.form.get('year').value);
+      console.log("Lookup the data source using : " + this.form.get('make').value);
+      console.log("Lookup the data source using : " + this.form.get('model').value);
+      console.log("Lookup the data source using : " + this.form.get('trim').value);
+       // Service/API call for vehicle info lookup
+       // hardcoing the values for now
+       vin = '3GCPCREC0EG352446';
+       year = this.form.get('year').value;
+       make = this.form.get('make').value;
+       model = this.form.get('model').value;
+       trim = this.form.get('trim').value;
+    }
+    this.router.navigate(['/lookupVehicle'], {queryParams : {'vin':vin, 'year' : year, 'make': make, 'model':model, 'trim':trim}});
   }
 
  

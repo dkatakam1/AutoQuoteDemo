@@ -1,0 +1,31 @@
+.nav-footer-container {
+    position: relative;
+    background-color: #ffffff;
+    margin-top: 100px;
+    width:100%;
+    height:100px;
+    overflow: hidden;
+}
+
+.btnBack{
+    float: right;
+    padding-left: 25px;
+}
+
+.button{
+    min-width: 120px;
+    min-height: 44px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: solid 1px #003893;
+    color: #003893;
+    font-family:'Mission Gothic Regular', sans-serif;
+    font-weight:bold;
+}
+
+.button__next{
+    background-color: #2B33AC;
+    color: #FFF;
+    font-size: 18px;
+}
+

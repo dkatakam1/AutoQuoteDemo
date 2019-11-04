@@ -24,11 +24,12 @@
                             <div class="row no-gutters">
                                 <div class="col-12 col-lg-3 col-md-6 col-sm-12 col-xl-4">
                                     <div class="form-group">
-                                        <input formControlName="vin" type="text" class="form-control" id="vin">
+                                        <input formControlName="vin" type="text" class="form-control" id="vin" [value]=cVin
+                                        (keyup)="validateVin($event)">
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-2 col-md-6 col-sm-12 col-xl-2">
-                                    <button class="button btnSearch">Look Up</button>
+                                <div class="col-12 col-lg-2 col-md-6 col-sm-12 col-xl-2" [ngClass]="{'hide-lookup' : isVinIncomplete}" >
+                                        <button (click)="lookupVehicle('vin')" class="button btnSearch">Look Up</button>
                                 </div>
                             </div>
         
@@ -39,7 +40,8 @@
                                 <div class="col-12 col-lg-2 col-md-12 col-sm-12 col-xl-2 page-auto-vehicles">
                                     <p>Year</p>
                                     <div class="form-group">
-                                     <select  formControlName="year" class="form-control" id="year">
+                                     <select  formControlName="year" class="form-control" id="year"
+                                            (change)="storeValueToLocalStorage($event)">
                                         <option *ngFor="let vYear of yearList" [value]="vYear"
                                             [ngValue]="vYear">{{vYear}}</option>            
                                      </select>
@@ -48,7 +50,8 @@
                                 <div class="col-12 col-lg-2 col-md-12 col-sm-12 col-xl-2 page-auto-vehicles adjust-gutter">
                                     <p>Make</p>
                                     <div class="form-group">
-                                        <select formControlName="make" class="form-control" id="make">
+                                        <select formControlName="make" class="form-control" id="make"
+                                            (change)="storeValueToLocalStorage($event)">
                                         <option *ngFor="let vMake of makeList" [value]="vMake"
                                                 [ngValue]="vMake">{{vMake}}</option>  
                                         </select>
@@ -57,7 +60,8 @@
                                 <div class="col-12 col-lg-3 col-md-12 col-sm-12 col-xl-3 page-auto-vehicles adjust-gutter">
                                     <p>Model</p>
                                     <div class="form-group">
-                                        <select formControlName="model" class="form-control" id="model">
+                                        <select formControlName="model" class="form-control" id="model"
+                                             (change)="storeValueToLocalStorage($event)">
                                         <option *ngFor="let vModel of modelList" [value]="vModel"
                                                 [ngValue]="vModel">{{vModel}}</option>                   
                                        </select>
@@ -66,12 +70,16 @@
                                 <div class="col-12 col-lg-3 col-md-12 col-sm-12 col-xl-3 page-auto-vehicles adjust-gutter">
                                     <p>Body Style/ Trim</p>
                                     <div class="form-group">
-                                        <select  formControlName="trim" class="form-control" id="trim">
+                                        <select  formControlName="trim" class="form-control" id="trim"
+                                           (change)="storeValueToLocalStorage($event)">
                                         <option *ngFor="let vTrim of trimList" [value]="vTrim"
                                                 [ngValue]="vTrim">{{vTrim}}</option>
                                        </select>
                                     </div>
                                 </div> 
+                                <div class="col-12 col-lg-2 col-md-6 col-sm-12 col-xl-2" [ngClass]="{'hide-lookup' : isVehicleInfoIncomplete}" >
+                                        <button (click)="lookupVehicle('vehicleInfo')" class="button btnSearch">Look Up</button>
+                                    </div>
                             </div>
                         </div>
         
@@ -79,8 +87,8 @@
                         <hr>
                             <div class="row">
                                 <div class="col-12 col-lg-10 col-md-10 col-sm-12 col-xl-7">
-                                    <h2 class="vehiclesDesc">{{cYear}} {{cMake}} {{cModel}} {{cTrim}}</h2>
-                                    <p class="subTitleAuto">VIN: {{cVin}}</p>
+                                    <h2 class="vehicle-description">{{cYear}} {{cMake}} {{cModel}} {{cTrim}}</h2>
+                                    <p class="vehicle-vin">VIN: {{cVin}}</p>
                                 </div>
                             </div>
                         </div>
@@ -204,3 +212,4 @@
                 </div>
             </div>
         </div>
+        <app-footer></app-footer>
