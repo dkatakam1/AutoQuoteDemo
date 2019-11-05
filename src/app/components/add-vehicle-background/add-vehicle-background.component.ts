@@ -15,6 +15,7 @@ export class AddVehicleBackgroundComponent implements OnInit {
   isVehiclesFound = false;
   vehicles = [];
   displayVehicles = 0;
+  membershipOverlayOff = false;
   constructor(private shareSvc: ShareSelectedVehiclesService, 
               private router: Router,
               private activatedRoute: ActivatedRoute,
@@ -27,19 +28,50 @@ export class AddVehicleBackgroundComponent implements OnInit {
       if(params.id == 2) this.isVehiclesFound = true;
     })
 
-   // this.openBackDropCustomClass();
+    // this.openBackDropCustomClass();
+   /** 
     this.shareSvc.currentVehicle.subscribe(vehicles => {
         this.vehicles = [...vehicles];
         this.displayVehicles = this.vehicles.length;
     })
+    */
+
+        // Hard coding vehicles array
+        this.vehicles[0] = { "year" :  "2020",
+              "make" : "AUDI",
+              "model" : "A6",
+              "vin" : "AYTCXT9087Y3YD5W"};
+        this.vehicles[1] = { "year" :  "2017",
+            "make" : "MERCEDES",
+            "model" : "S550",
+            "vin" : "VTRERN77TKID98465"};     
+        this.vehicles[2] = { "year" :  "2009",
+            "make" : "HOND",
+            "model" : "COUPE",
+            "vin" : "VTRERN77TKID98465"}; 
+            this.displayVehicles = this.vehicles.length;
+
     this.vehicles.forEach(vehicle => {
       vehicle.removed = "false";
     })
-
-    
-
+  }
+  onMemberhsipOverlayClose(){
+    this.membershipOverlayOff = true;
   }
 
+  vehicleSelected(index: number){
+    console.log("checked : " + index);
+    /*
+    let idx = this.selectedVehicleIndices.findIndex((value) =>{
+        return value == index;
+    })
+
+    if(idx == -1){
+    this.selectedVehicleIndices.push(index);
+    } else {
+      this.selectedVehicleIndices.splice(idx, 1);
+    } */ 
+  }
   provideDetails(index: number){
     let vehicleData = { queryParams : {
         "year" : this.vehicles[index].year,
@@ -66,9 +98,9 @@ export class AddVehicleBackgroundComponent implements OnInit {
   openBackDropCustomClass() {
 
     if(this.isVehiclesFound){
-       this.modalService.open(AddVehicleOverlayWithdataComponent, {backdropClass: 'dark-blue-bg-modal', centered: true});
+       this.modalService.open(AddVehicleOverlayComponent, {centered: true});
     } else {
-      this.modalService.open(AddVehicleOverlayComponent, {backdropClass: 'dark-blue-bg-modal', centered: true});
+      this.modalService.open(AddVehicleOverlayComponent, {centered: true});
     }
  }
 

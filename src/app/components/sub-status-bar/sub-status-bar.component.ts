@@ -1,16 +1,14 @@
 import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-status-bar',
-  templateUrl: './status-bar.component.html',
-  styleUrls: ['./status-bar.component.scss']
+  selector: 'app-sub-status-bar',
+  templateUrl: './sub-status-bar.component.html',
+  styleUrls: ['./sub-status-bar.component.scss']
 })
-export class StatusBarComponent implements OnInit {
+export class SubStatusBarComponent implements OnInit {
   steps = [
-    {id: 'details', order: 1, name: 'Details'},
-    {id: 'vehicles', order: 2, name: 'Vehicles'},
-    {id: 'drivers', order: 3, name: 'Drivers'},
-    {id: 'quote', order: 4, name: 'Quote'}];
+    {id: 'selectVehicles', order: 1, name: 'Select Vehicles'},
+    {id: 'vehicleDetails', order: 2, name: 'Vehicle Details'}];
   @Input() activeStepId: string;
 
   constructor() {

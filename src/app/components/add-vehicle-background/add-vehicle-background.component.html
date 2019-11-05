@@ -1,38 +1,71 @@
 <app-header></app-header>
-<app-status-bar activeStepId="vehicles"></app-status-bar>
+<div class="container-fluid">
+<div class="row justify-content-center">
+        <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 vehicles-header">
+                <app-status-bar activeStepId="drivers"></app-status-bar>
+       </div>
+    </div>
+</div>
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-12 col-xl-10 col-lg-10 col-md-10 col-sm-10 vehicles-header">
-            <h2>VEHICLES</h2>
-            <p>Provide details for each vehicle.</p>
+        <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 vehicles-header">
+            <h2>Hi Francessa! Let us get some details of your vehicles.</h2>
+        </div>
+    </div><br>
+    <div class="row justify-content-center">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 vehicles-header">
+    <div class="card membership-advertisement" [ngClass]="{'membership-overlay-no-display' : membershipOverlayOff }">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10">
+            <div class="card-body">
+                <h2>MEMBERSHIP ADVERTISEMENT</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <div class="close-button"> 
+                        <button (click)="onMemberhsipOverlayClose()">Close</button>
+                    </div>
+            </div>   
+          </div>
         </div>
     </div>
-    <div class="row justify-content-center" *ngIf="displayVehicles > 0">
-        <div class="col-12 col-xl-10 col-lg-10 col-md-10 col-sm-10 vehicles-list">
-                <table>
-                        <tr *ngFor="let vehicle of vehicles; let i = index" [ngClass]="{'remove-vehicle' : vehicles[i].removed}">
-                            <td class="vehicle-cell">
-                                <span  class="vehicle-details">{{vehicle.year}} {{vehicle.make}} {{vehicle.model}} <br></span>
-                                <span  class="vin-details">VIN: {{vehicle.vin}}</span>
-                            </td>
-                            <td>
-                                <div class="continue-button" (click)="provideDetails(i)">
-                                    <button>Provide Details</button>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="remove-button" (click)="removeVehicle(i)">
-                                        <button>Remove</button>
-                                </div>
-                            </td>
-                        </tr>
-                </table>
-        </div>
-    </div><br><br>
-    <div class="row justify-content-center">
-            <div class="col-12 col-xl-10 col-lg-10 col-md-10 col-sm-10 add-vehicle" (click)="addNewVehicle()">
-                <p><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;Add vehicle</p>
+  
+
+        <div class="card vehicles-list-container" [ngClass]="{'membership-overlay-background-disable' : !membershipOverlayOff}">                                                          
+            <div class="card-header">
+                <div class="vehicles-status-bar">
+                        <app-sub-status-bar activeStepId="selectVehicles"></app-sub-status-bar>
+                </div>
+            </div>
+            <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10 vehicles-list">
+                          <h2>We found {{displayVehicles}} vehicles associated with this address.</h2>
+                          <p>Select the vehicles you want to add.</p>
+                        </div>
+                    </div>
+                    <div class="row nested-row-adjust" *ngIf="displayVehicles > 0">
+                            <div class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10 vehicles-list">
+                                    <table>
+                                            <tr *ngFor="let vehicle of vehicles; let i = index">
+                                                <td class="checkbox-cell">
+                                                    <label class="container">
+                                                        <input type="checkbox" (change)=vehicleSelected(i)>
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </td>
+                                                <td class="vehicle-cell">
+                                                    <span  class="vehicle-details">{{vehicle.year}} {{vehicle.make}} {{vehicle.model}} <br></span>
+                                                    <span  class="vin-details">VIN: {{vehicle.vin}}</span>
+                                                </td>
+                                            </tr>
+                                    </table>
+                            </div>
+                        </div><br><br>
+            </div>
+            <div class="card-footer">
+                <app-footer activeStep="Vehicle Details"></app-footer>
             </div>
         </div>
-</div>  
-<app-footer></app-footer>
+</div> 
+</div> 
+</div>
+<br><br><br>

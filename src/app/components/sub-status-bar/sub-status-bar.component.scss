@@ -5,16 +5,15 @@ ul{
     justify-content: space-between;
     counter-reset: step;
     margin: 1px;
-    background-color:#FFF;   
+    background-color:#F2F8FC;   
     position: relative;
-    height:90px;
-    padding-top:30px;
+    height:120px;
   }
   
   li{
     display: inline-block;
     position: relative;
-    width: 33.33%;
+    width: 50%;
     text-align: center;
     color: #bdbdbd;
     margin: 1px ;
@@ -23,8 +22,8 @@ ul{
   
   li:before{
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 23px;
+    height: 23px;
     border-radius: 50%;
     background-color: #bdbdbd;
     color: #bdbdbd;
@@ -53,7 +52,7 @@ ul{
 */
 
 .d-sm-block{
-  margin-top:120px;
+  margin-top:0px;
 }
   
   li:after{
@@ -62,7 +61,7 @@ ul{
     height:3px;
     background-color: #bdbdbd;
     position:absolute;
-    top: 30px;
+    top: 20px;
     left: -50%;
     z-index: 0;
   }
@@ -80,9 +79,9 @@ ul{
   }
 
   li.current:before{
-    background-color: #2C68AB;
-    width:60px;
-    height:60px;
+    background-color: #FFF;
+    border:10px solid #2C68AB;
+    box-sizing: content-box;
   }
 /*
   li.current:before {

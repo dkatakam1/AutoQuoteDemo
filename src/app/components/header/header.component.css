@@ -1,7 +1,7 @@
 .container-fluid{
-    background-color: #3774AF !important;
+    background-color: #2C68AB !important;
     width:100%;
-    height:90px;
+    height:136px;
     position: fixed;
     justify-content: space-around;
 }
@@ -12,23 +12,26 @@
 }
 
  .navbar-brand .aaa-logo{
-    width:150px;
-    height:80px; 
+    width:180px;
+    height:100px; 
 }
 
 .logo-col{
     z-index:-1;
+    transform:translateY(15%);
 }
 
 .header-text-col{
     z-index:2;
     position: absolute;
+    transform:translateY(25%);
 }
 .navbar-header-text{
-    font-family:Helvetica;
+    font-family:'Mission Gothic Regular', sans-serif;
     color: #FFF !important; 
     margin:auto;
     font-size:36px;
+    line-height:47px;
 }
 
 
@@ -57,10 +60,11 @@
     }
     
     .navbar-header-text{
-        font-family:Helvetica;
+        font-family:'Mission Gothic Regular', sans-serif;
         color: #FFF !important; 
         margin:auto;
-        font-size:140%;
+        font-size:36px;
+        line-height:47px;
     }
 } 
 

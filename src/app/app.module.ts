@@ -16,6 +16,7 @@ import { VehiclesProvideDetailsComponent } from './components/vehicles-provide-d
 import { AddVehicleLookupComponent } from './components/add-vehicle-lookup/add-vehicle-lookup.component';
 import { BridgeComponentComponent } from './components/bridge-component/bridge-component.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SubStatusBarComponent } from './components/sub-status-bar/sub-status-bar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './components/footer/footer.component';
     VehiclesProvideDetailsComponent,
     AddVehicleLookupComponent,
     BridgeComponentComponent,
-    FooterComponent
+    FooterComponent,
+    SubStatusBarComponent
   ],
   imports: [
     BrowserModule,
