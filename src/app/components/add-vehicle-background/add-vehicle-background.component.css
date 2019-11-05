@@ -16,19 +16,72 @@
   line-height:39px;
 }
 
-.vehicles-header p{
+/*Styling for membership ad overlay*/
+.membership-overlay-no-display{
+  display:none;
+}
+
+.membership-advertisement{
+  z-index:2;
+  position: absolute;
+  width:98.3%;
+  border:2px solid #999999;
+  border-radius: 5px;
+}
+.membership-advertisement .card-body p{
+  font-family: 'Mission Gothic Regular', sans-serif;
+  font-size: 21px;
+  line-height: 30px;
+  font-weight:normal;
+  color:#999999;
+}
+.membership-advertisement .card-body h2{
+  font-size:24px;
+  line-height:31px;
+  font-family: 'Mission Gothic Regular', sans-serif;
+  color:#2C68AB;
+}
+.membership-overlay-background-disable{
+  opacity:0.3;
+  pointer-events:none;
+} 
+.close-button button{
+  background-color:#999999;
+  font-family: 'Mission Gothic Regular', sans-serif;
+  border: 1.5px solid #B8B8B8;
+  border-radius:5px;
+  opacity:0.75; 
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  width:117px;
+  height:42px;
+}
+
+
+/*Styling for vehicles list*/
+.card-header{
+  background-color:#F2F8FC;
+}
+.vehicles-list-container{
+  z-index:1;
+}
+.vehicles-list{
+  background-color:#FFF;
+  border-radius:5px;
+}
+.vehicles-list h2 {
+  font-family:'Mission Gothic Regular', sans-serif; 
+  font-size:30px;
+  line-height:39px;
+}
+.vehicles-list p{
   font-family:'Mission Gothic Regular', sans-serif; 
   color:#999999;
   font-size:24px;
   line-height:31px;
-}
-
-
-
-/*Styling for vehicles list*/
-.vehicles-list{
-  background-color:#FFF;
-  border-radius:5px;
 }
 
 .nested-row-adjust{
@@ -60,106 +113,15 @@
   td{
     padding:15px 0px;
   }
+  .checkbox-cell{
+    width:80px;
+    padding-bottom:18px;
+    padding-left:20px;
+  }
  
-  .card-header{
-    background-color:#F2F8FC;
-  }
-
-  .continue-button, .remove-button{
-      margin: 20px;
-  }
-  .sub-section{
-    border:1px solid gray;
-    border-radius:5px;
-    width:100%;
-  }
-
-  .continue-button button{
-    background-color: #FFF;
-    border:1px solid #003893;
-    font-family:'Mission Gothic Regular', sans-serif; 
-    color: #003893;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-  }
-
-  .remove-button button{
-    background-color: #FFF;
-    font-family:'Mission Gothic Regular', sans-serif; 
-    border:none;
-    color: #003893;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-  }
-  
-  .remove-vehicle{
-      display:none;
-  }
-
-  
-.checkbox-cell{
-  width:80px;
-  padding-bottom:18px;
-  padding-left:20px;
-}
-
-.close-button button{
-  background-color:#999999;
-  font-family: 'Mission Gothic Regular', sans-serif;
-  border: 1.5px solid #B8B8B8;
-  border-radius:5px;
-  opacity:0.75; 
-  color: white;
-
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  width:117px;
-  height:42px;
-}
-.vehicles-list-container{
-  z-index:1;
-}
-
-.membership-overlay-background-disable{
-  opacity:0.3;
-  pointer-events:none;
-}
-
-.membership-overlay-no-display{
-  display:none;
-}
-
-.membership-advertisement{
-  z-index:2;
-  position: absolute;
-  width:98.3%;
-  border:2px solid #999999;
-  border-radius: 5px;
-}
-
-.membership-advertisement .card-body p{
-  font-family: 'Mission Gothic Regular', sans-serif;
-  font-size: 21px;
-  line-height: 30px;
-  font-weight:normal;
-  color:#999999;
-}
+ 
 
 
-.membership-advertisement .card-body h2{
-  font-size:24px;
-  line-height:31px;
-  font-family: 'Mission Gothic Regular', sans-serif;
-  color:#2C68AB;
-}
 /* Checkbox styling */
 .container {
   display: block;
@@ -229,39 +191,52 @@
 
 /* End of Checkbox Styling */
 
-
-  
-/*Styling for add vehicle section */
-.add-vehicle{
-  border:1px dashed #484848;
-  font-family:'Mission Gothic Regular', sans-serif; 
-  color:#484848;
-  padding-top:18px;
-}
-
-.add-vehicle p{
-cursor: pointer;
-}
-
-.fa-plus-circle{
-  color:#484848;
-}
   
  /* Media Queries for Responsiveness */
 
 
 
 /* Extra small devices (portrait phones, less than 576px) */
-@media (min-width: 320px) and (max-width: 400px) {
+@media (min-width: 320px) and (max-width: 575px) {
   .vehicles-header{
     margin-left:10px;
   }
+  .vehicles-header h2{
+    font-size:16px;
+    line-height:21px;
+    margin-left:10px;
+  }
+
+  .membership-advertisement .card-body p{
+    font-size: 16px;
+    line-height: 21px;
+  }
+  
+  .membership-advertisement .card-body h2{
+    font-size:20px;
+    line-height:26px;
+  }
+  
+  .vehicles-list h2{
+    font-size:20px;
+    line-height:26px;
+  }
+  
+  .vehicles-list p{
+    font-size:18px;
+    line-height:23px;
+  }
     
+  .vehicle-details, .vin-details {
+    font-size:16px;
+    line-height:21px;
+  }
+
 } 
 
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 401px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .vehicles-header{
     margin-left:10px;
   }

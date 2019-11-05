@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container-fluid">
 <div class="row justify-content-center">
-        <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 vehicles-header">
+        <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
                 <app-status-bar activeStepId="drivers"></app-status-bar>
        </div>
     </div>
@@ -13,7 +13,7 @@
         </div>
     </div><br>
     <div class="row justify-content-center">
-    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10 vehicles-header">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-10 col-sm-10">
     <div class="card membership-advertisement" [ngClass]="{'membership-overlay-no-display' : membershipOverlayOff }">
         <div class="row justify-content-center">
             <div class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10">
@@ -31,7 +31,7 @@
 
         <div class="card vehicles-list-container" [ngClass]="{'membership-overlay-background-disable' : !membershipOverlayOff}">                                                          
             <div class="card-header">
-                <div class="vehicles-status-bar">
+                <div>
                         <app-sub-status-bar activeStepId="selectVehicles"></app-sub-status-bar>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="row nested-row-adjust" *ngIf="displayVehicles > 0">
-                            <div class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10 vehicles-list">
+                            <div class="col-12 col-xl-12 col-lg-10 col-md-10 col-sm-10">
                                     <table>
                                             <tr *ngFor="let vehicle of vehicles; let i = index">
                                                 <td class="checkbox-cell">
@@ -52,7 +52,7 @@
                                                         <span class="checkmark"></span>
                                                     </label>
                                                 </td>
-                                                <td class="vehicle-cell">
+                                                <td>
                                                     <span  class="vehicle-details">{{vehicle.year}} {{vehicle.make}} {{vehicle.model}} <br></span>
                                                     <span  class="vin-details">VIN: {{vehicle.vin}}</span>
                                                 </td>

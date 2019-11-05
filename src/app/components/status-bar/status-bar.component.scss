@@ -142,7 +142,7 @@ li.finished:before {
 
 
 /* Extra small devices (portrait phones, less than 576px) */
-@media (min-width: 320px) and (max-width: 400px) {
+@media (min-width: 320px) and (max-width: 575px) {
 
   li{
     display: inline-block;
@@ -154,19 +154,49 @@ li.finished:before {
     font-weight: bold;
     font-family: 'Mission Gothic Regular', sans-serif;
   }
+  
+  li:before{
+    width: 23px;
+    height: 23px;
+  }
+
+  li.current:before{
+    background-color: #2C68AB;
+    width:30px;
+    height:30px;
+  }
+  li.finished:before {
+    padding-top:5px;
+    font-size:15px;
+    line-height: 21px;
+    font-family: 'Mission Gothic Regular',sans-serif;
+    font-weight: normal;
+    color: #FFF;
+    width:30px;
+    height:30px;
+  }
   .d-sm-block{
-    margin-top:180px;
+    margin-top:20px;
   }
 
   .step-name{
-    font-size:15px;
+    font-size:18px;
+    line-height:23px;
+    font-weight:normal;
   }
     
+  li:after{
+    top: 22px;
+  }
+  li.finished + li:after {
+    top:25px;
+  }
+
 } 
 
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 401px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
   li{
     display: inline-block;
     position: relative;

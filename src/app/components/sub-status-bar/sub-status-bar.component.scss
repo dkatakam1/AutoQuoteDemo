@@ -141,7 +141,12 @@ li.finished:before {
 
 
 /* Extra small devices (portrait phones, less than 576px) */
-@media (min-width: 320px) and (max-width: 400px) {
+@media (min-width: 320px) and (max-width: 575px) {
+
+    ul{
+        height:71px;
+        width:100%;
+    }
 
   li{
     display: inline-block;
@@ -150,22 +155,33 @@ li.finished:before {
     text-align: center;
     color: #bdbdbd;
     font-size:8px;
-    font-weight: bold;
+    font-weight: normal;
     font-family: 'Mission Gothic Regular', sans-serif;
   }
   .d-sm-block{
-    margin-top:180px;
+    margin-top:0px;
   }
 
   .step-name{
-    font-size:15px;
+    font-size:14px;
+    line-height: 18px;
   }
+
+  li:before, li.current:before, li.finished:before{
+    width: 20px;
+    height: 20px;
+  }
+
+  li.current:before{
+    border:8px solid #2C68AB;
+  }
+  
     
 } 
 
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 401px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
   li{
     display: inline-block;
     position: relative;
