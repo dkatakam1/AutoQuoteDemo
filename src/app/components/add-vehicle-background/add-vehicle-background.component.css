@@ -119,8 +119,40 @@
     padding-left:20px;
   }
  
- 
+ .remove-vehicle{
+    padding-right:20px;
+    text-align:right;
+    font-family:'Mission Gothic Regular', sans-serif;
+    font-size:18px;
+    line-height:23px;
+    color:#2C68AB;
+    text-decoration: underline;
+    cursor: pointer;
+ }
+.hide-remove-vehicle{
+  display:none;
+}
 
+/*Styling for Add vehicle section*/
+.add-vehicle{
+border:1px dashed #979797;
+}
+.add-vehicle h3{
+  font-family:'Mission Gothic Regular', sans-serif; 
+  color:#2C68AB;
+  font-size:20px;
+  line-height:26px;
+  cursor: pointer;
+}
+
+.add-vehicle p{
+  font-family:'Mission Gothic Regular', sans-serif; 
+  font-weight:normal;
+  color:#999999;
+  font-size:18px;
+  line-height:21px;
+  padding-top:15px;
+}
 
 /* Checkbox styling */
 .container {

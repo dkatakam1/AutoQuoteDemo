@@ -23,10 +23,15 @@
     line-height:26px;
 }
 
-.button__next{
-    background-color: #2B33AC;
+.button__active{
+    background-color: #50AB2C;
     color: #FFF;
-    font-size: 18px;
+    border:1px solid #50AB2C;
+    pointer-events: auto;
+}
+
+.button__inactive{
+    pointer-events:none;
 }
 
 /* Media Queries for Responsiveness */

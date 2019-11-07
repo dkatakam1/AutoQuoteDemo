@@ -9,7 +9,7 @@ import { BridgeComponentComponent } from './components/bridge-component/bridge-c
 
 const routes: Routes = [
   {path:'', component:BridgeComponentComponent},
-  {path:'showOverlay/:id', component:AddVehicleBackgroundComponent},
+  {path:'showOverlay', component:AddVehicleBackgroundComponent},
   {path:'addVehicle', component:AddVehicleComponent},
   {path:'lookupVehicle', component:AddVehicleLookupComponent},
   {path:'provideDetails', component:VehiclesProvideDetailsComponent}

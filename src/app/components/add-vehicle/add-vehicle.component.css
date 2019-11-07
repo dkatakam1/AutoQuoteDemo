@@ -1,52 +1,45 @@
+
 .container-fluid{
-    margin-top:20px;
-    -webkit-box-direction: normal;
+    margin-top:40px;
 }
 
-/*Styles for the header ---
-  'ADD A VEHICLE
-   Add a vehicle to this policy. For a more accurate quote, use VIN..'
- ---*/
-.vehicles-header h3 {
-    font-family:'Mission Gothic Bold', sans-serif; 
-}
+/*Styling for add vehicle header ---
+  Let us add your vehicle
+--- */
+.card-header{
+    background-color:#F2F8FC;
+  }
 
-.vehicles-header p{
-    font-family:'Mission Gothic Light', sans-serif; 
+.vehicles-header h2 {
+  font-family:'Mission Gothic Regular', sans-serif; 
+  font-size:30px;
+  line-height:39px;
 }
-
-/*Styles for the form with white background */
-form{
-    background-color: #FFF;
-    padding:20px;
-    border-radius:5px;
-}
-
-/* Styles for the header of VIN lookup input field ---
-    Enter VIN or Year, Make and Model.
-    Vehicle Identification Number (VIN)
----*/
-.enter-details p, .enter-vin p{
-    font-family: Helvetica;
-    font-size: 16px !important;
-    color: #3B3B3B !important;
-}
-
+  .vehicles-header p{
+    font-family:'Mission Gothic Regular', sans-serif; 
+    color:#999999;
+    font-size:24px;
+    line-height:31px;
+  }
+/*Styling for VIN header*/
 .enter-vin p{
-    font-weight: bold;
-    margin-top:-10px;
+	color: #999999;
+	font-family: "Mission Gothic Regular";
+	font-size: 18px;
+	line-height: 23px;
 }
 
 /*Common styling for input text and select */
 .form-control {
     background-color: #F6F6F6;
-    border: 1px solid #dedede;
-    border-radius: 0;
+    border: 1.5px solid #B8B8B8;
+    border-radius: 2px;
+    box-shadow: none;
 }
 
 select.form-control:focus, input.form-control:focus{
-    border:1px solid #2B33AC;
-    box-shadow: none;
+    border:1.5px solid #2C68AB;
+    border-radius: 5px;
 }
 
 select.form-control {
@@ -60,15 +53,14 @@ select, option{
 
 /*Styles for "lookup" button */
 .btnSearch {
-    font-family:'Mission Gothic Light', sans-serif; 
+    font-family:'Mission Gothic Regular', sans-serif; 
     text-align: center;
-    background: #3E7ACF;
-    border: 1px solid #3E7ACF;
-    width: 50% !important;
+    background: #2C68AB;
+    border: 1px solid #2C68AB;
+    width: 100% !important;
     color: #ffffff;
-    border-radius: 5px 5px;
+    border-radius: 5px;
     padding: 10px;
-    font-weight: bold;
     min-width: 80px;
     position: relative;
     z-index: 0;
@@ -81,17 +73,18 @@ select, option{
     contain: content;
     font-style: inherit;
     font-variant: inherit;
-    line-height: 0.7;
-    margin-left:5px;
+    line-height: 1;
+    box-sizing: border-box;
 }
 
 /* Styles for "Or" */
 .vehiclesTitles {
     font-family:'Mission Gothic Regular', sans-serif; 
-    font-size: 16px !important;
-    color: #3B3B3B !important;
-    font-weight:bold;
-    padding:20px;
+    height: 31px;
+    width: 28px;
+    color: #000000;
+    font-size: 24px;
+    line-height: 31px;   
 }
 
 .hide-lookup{
@@ -102,10 +95,10 @@ select, option{
     Year, Make , Model, Body Style/Trim
 ---*/
 .page-auto-vehicles p, .make p, .model p, .body-style p, .type-description p{
-    font-family: Helvetica;
-    font-size: 16px !important;
-    font-weight: bold;
-    color: #3B3B3B !important;
+    color: #999999;
+    font-family: "Mission Gothic Regular", sans-serif;
+    font-size: 18px;
+    line-height: 23px;  
 }
 
 /* Spacing between the drop downs */
@@ -113,44 +106,70 @@ select, option{
     margin-left:10px;
 }
 
+  
  /* Media Queries for Responsiveness */
 
 
 
 /* Extra small devices (portrait phones, less than 576px) */
-@media (min-width: 320px) and (max-width: 400px) {
-   
-    .adjust-gutter, .btnSearch{
-        margin-left:0px;
-    }
-      
-  } 
+@media (min-width: 320px) and (max-width: 575px) {
+  .vehicles-header{
+    margin-left:10px;
+  }
+  .vehicles-header h2{
+    font-size:16px;
+    line-height:21px;
+    margin-left:10px;
+  }
+
+  .membership-advertisement .card-body p{
+    font-size: 16px;
+    line-height: 21px;
+  }
   
+  .membership-advertisement .card-body h2{
+    font-size:20px;
+    line-height:26px;
+  }
   
-  /* Small devices (landscape phones, 576px and up) */
-  @media (min-width: 401px) and (max-width: 767px) {
+  .vehicles-list h2{
+    font-size:20px;
+    line-height:26px;
+  }
+  
+  .vehicles-list p{
+    font-size:18px;
+    line-height:23px;
+  }
     
-    .adjust-gutter, .btnSearch{
-        margin-left:0px;
-    }
+  .vehicle-details, .vin-details {
+    font-size:16px;
+    line-height:21px;
   }
-  
-  /* Medium devices (tablets, 768px and up) */
-  @media (min-width: 768px) and (max-width: 991px) {
-  
-    .adjust-gutter{
-        margin-left:0px;
-    }
-  
+
+} 
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .vehicles-header{
+    margin-left:10px;
   }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1024px) {
   
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) and (max-width: 1024px) {
-    
-  }
-  
-  
-  /* Extra Large devices (desktops, 1024px and up) */
-    @media  (min-width : 1025px) {
-  
-   }
+}
+
+
+/* Extra Large devices (desktops, 1024px and up) */
+  @media  (min-width : 1025px) {
+
+ }

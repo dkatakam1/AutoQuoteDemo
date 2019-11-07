@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
-import { Key } from 'protractor';
 
 
 @Component({
@@ -21,10 +20,6 @@ export class AddVehicleComponent implements OnInit {
   makeList = [''];
   modelList = [''];
   trimList = [''];
-  isGaragedAtPolicyAddressYes = false;
-  isGaragedAtPolicyAddressNo = false;
-  isPreviouslyTitledYes = false;
-  isPreviouslyTitledNo = false;
   isVinIncomplete = true;
   isVehicleInfoIncomplete = true;
 
@@ -46,12 +41,10 @@ export class AddVehicleComponent implements OnInit {
   }
 
   initializeDropDowns(){
-
     this.yearList.push('2001');
     this.makeList.push('ASTON MARTIN');
     this.modelList.push('FIESTA 4DR');
     this.trimList.push('TITANIUM');
-
   }
 
   storeValueToLocalStorage(event: Event){
@@ -59,25 +52,6 @@ export class AddVehicleComponent implements OnInit {
     let value = this.form.get(targetId).value;
     console.log("Clicked on the form : " + targetId);
     console.log("Value : " + value);
-    if(targetId == "isGaragedAtPolicyAddress"){
-      if(value == "Yes"){
-        this.isGaragedAtPolicyAddressYes = true;
-        this.isGaragedAtPolicyAddressNo = false;
-      } else {
-        this.isGaragedAtPolicyAddressNo = true;
-        this.isGaragedAtPolicyAddressYes = false;
-      }
-    }
-    if(targetId == "isPreviouslyTitled"){
-      if(value == "Yes"){
-        this.isPreviouslyTitledYes = true;
-        this.isPreviouslyTitledNo = false;
-      } else {
-        this.isPreviouslyTitledNo = true;
-        this.isPreviouslyTitledYes = false;
-      }
-    }
-    
     if(targetId == "year" || targetId == "make" || targetId == "model" || targetId == "trim"  ){
         if(this.validateVehicleInfo()){
           this.isVehicleInfoIncomplete = false;
@@ -110,10 +84,6 @@ export class AddVehicleComponent implements OnInit {
     console.log(this.form.get('make').value);
     console.log(this.form.get('model').value);
     console.log(this.form.get('trim').value);
-    console.log(this.form.get('vehicleTypeDescription').value);
-    console.log(this.form.get('vehicleOwnership').value);
-    console.log(this.form.get('isPreviouslyTitled').value);
-    console.log(this.form.get('isGaragedAtPolicyAddress').value);
   }
 
   lookupVehicle(input: string){
@@ -145,7 +115,7 @@ export class AddVehicleComponent implements OnInit {
        model = this.form.get('model').value;
        trim = this.form.get('trim').value;
     }
-    this.router.navigate(['/lookupVehicle'], {queryParams : {'vin':vin, 'year' : year, 'make': make, 'model':model, 'trim':trim}});
+    this.router.navigate(['/showOverlay'], {queryParams : {'vin':vin, 'year' : year, 'make': make, 'model':model, 'trim':trim}});
   }
 
  
